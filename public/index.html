@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gemini Chatbot — Single Page</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h2>Channels</h2>
+      <div id="threads"></div>
+      <div class="sidebar-controls">
+        <input id="new-thread-name" placeholder="new channel name">
+        <button id="create-thread">Create</button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header id="chat-header">
+        <div id="thread-title">Select a channel</div>
+        <div id="thread-actions">
+          <button id="rename-thread">Rename</button>
+          <button id="delete-thread">Delete</button>
+        </div>
+      </header>
+
+      <section id="messages"></section>
+
+      <footer id="composer">
+        <div id="image-uploader">
+          <input type="file" id="imageInput" accept="image/*">
+          <div id="preview"></div>
+        </div>
+        <textarea id="inputText" placeholder="Type a message... (You can include code blocks with triple backticks)"></textarea>
+        <div class="composer-controls">
+          <button id="sendBtn">Send</button>
+          <div id="status"></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
