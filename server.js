@@ -25,12 +25,9 @@ const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
 // connect mongodb
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=> console.log('✅ MongoDB connected'))
-  .catch(err => {
-    console.error('❌ MongoDB error:', err);
-    process.exit(1);
-  });
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch(err => console.error("❌ MongoDB error:", err));
 
 // image upload setup
 const UPLOAD_DIR = path.join(__dirname, 'uploads');
